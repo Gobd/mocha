@@ -6,7 +6,7 @@ const gulp = require(`gulp`),
 gulp.task(`compress`, function() {
   return gulp.src(`./mocha.js`)
     .pipe(uglify({
-      mangle: false
+      mangle: true
     }))
     .pipe(rename(`mochaMin.js`))
     .pipe(gulp.dest(`./dist`));
@@ -17,3 +17,5 @@ gulp.task(`default`, [`compress`], function() {
     .pipe(concat('mochaChaiMin.js'))
     .pipe(gulp.dest(`./dist`));
 });
+
+//  mocha min should be able to hit 140Kb
