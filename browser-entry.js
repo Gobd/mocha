@@ -12,7 +12,7 @@ var Mocha = require('./lib/mocha');
  * @return {undefined}
  */
 
-var mocha = new Mocha({ reporter: 'html' });
+var mocha = new Mocha({ reporter: 'json' });
 
 /**
  * Save timer references to avoid Sinon interfering (see GH-237).
@@ -23,6 +23,12 @@ var setTimeout = global.setTimeout;
 var setInterval = global.setInterval;
 var clearTimeout = global.clearTimeout;
 var clearInterval = global.clearInterval;
+GLOBALOBJ = {
+  pass: [],
+  fail: [],
+  count: 0,
+  clean: []
+};
 
 var uncaughtExceptionHandlers = [];
 

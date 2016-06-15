@@ -1,0 +1,4 @@
+make my modifications to the file
+try to remove browser stdout since we don't use it, maybe we can just null it
+get gulp and uglifyJS
+get that stuff to work then we have a sweet custom mocha build for this project
