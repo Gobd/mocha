@@ -20,15 +20,11 @@ describe('Base reporter', function () {
   beforeEach(function () {
     stdout = [];
     stdoutWrite = process.stdout.write;
-    process.stdout.write = function (string) {
-      stdout.push(string);
-    };
     useColors = Base.useColors;
     Base.useColors = false;
   });
 
   afterEach(function () {
-    process.stdout.write = stdoutWrite;
     Base.useColors = useColors;
   });
 
