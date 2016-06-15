@@ -27,15 +27,6 @@ clean:
 	rm -rf lib-cov
 	rm -f coverage.html
 
-test-cov: lib-cov
-	@printf "==> [Test :: Coverage]\n"
-	@COV=1 $(MAKE) test REPORTER=html-cov > coverage.html
-
-lib-cov:
-	@printf "==> [Coverage]\n"
-	@rm -fr ./$@
-	@jscoverage lib $@
-
 lint:
 	@printf "==> [Test :: Lint]\n"
 	@$(ESLINT) $(SRC)
